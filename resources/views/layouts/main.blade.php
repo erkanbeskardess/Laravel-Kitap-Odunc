@@ -20,7 +20,7 @@
 </head>
 <body>
 @include('home._header')
-@include('home._navi')
+@include('home._book')
 @include('home._container')
 @section('content')
     @show

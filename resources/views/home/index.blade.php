@@ -1,5 +1,12 @@
 @extends('layouts.main')
 @section('title','KtpOdunc')
+@section('description')
+
+    Güvenle kitap ödünç alabileceğiniz Türkiyenin bir numaralı kütüphanesi...
+
+@endsection
+
+
 @section('content')
 
     <div class="products_exciting_box">

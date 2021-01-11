@@ -24,9 +24,14 @@ Route::get('/', function (){
 });
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');;
+Route::get('/admin/login', [HomeController::class, 'login'])->name('admin');
+Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
+Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
+Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome')->middleware('auth');;
 
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
