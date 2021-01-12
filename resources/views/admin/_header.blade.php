@@ -6,7 +6,7 @@
                 <!-- ============================================================== -->
                 <!-- Logo -->
                 <!-- ============================================================== -->
-                <a class="navbar-brand" href="dashboard.html">
+                <a class="navbar-brand" href="{{route('admin_home')}}">
                     <!-- Logo icon -->
                     <b class="logo-icon">
                         <!-- Dark Logo icon -->
