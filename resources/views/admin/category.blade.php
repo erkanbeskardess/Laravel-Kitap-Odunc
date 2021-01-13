@@ -17,6 +17,8 @@
                             <li><a href="#"></a></li>
                         </ol>
                         @auth
+                            <li><a href="{{route('admin_category_add')}}"
+                                   class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Kategori ekle</a></li>
                             <a href="{{route('admin_logout')}}" target="_blank"
                                class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Logout</a>
                         @endauth
@@ -58,7 +60,7 @@
 
                                     <td><span class="text-success">{{ $rs->description }}</span></td>
                                     <td class="txt-oflo">Edit</td>
-                                    <td class="txt-oflo">Delete</td>
+                                    <td class="txt-oflo"><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Silmek İstediğinize emin misiniz?')">Delete</a></td>
                                 </tr>
                                 </tbody>
                                 @endforeach
