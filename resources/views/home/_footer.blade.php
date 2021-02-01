@@ -127,5 +127,6 @@
 <script src="js/bootstrap-select.min.js"></script>
 <script src="js/slick.min.js"></script>
 <script src="js/wow.min.js"></script>
+<script src="jssor.slider-28.1.0.min.js"></script>
 <!--custom js-->
 <script src="js/custom.js"></script>

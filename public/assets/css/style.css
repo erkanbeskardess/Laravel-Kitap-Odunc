@@ -952,10 +952,13 @@ header .navbar-default .navbar-header {
 	background: #fff;
 	padding: 12px;
 	margin: 0px 15px;
+	width:auto;
+
+	
 }
 
 .prod-i img {
-	width: 100%;
+	
 }
 
 .left-ti {

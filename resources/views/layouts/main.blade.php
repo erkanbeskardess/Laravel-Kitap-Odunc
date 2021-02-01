@@ -11,6 +11,8 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap.min.css">
     <!--animate css-->
     <link rel="stylesheet" href="{{asset('assets')}}/css/animate-wow.css">
+    <script src="{{asset('assets')}}/slider/js/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
+
     <!--main css-->
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap-select.min.css">

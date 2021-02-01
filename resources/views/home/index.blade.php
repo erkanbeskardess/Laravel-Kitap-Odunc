@@ -15,22 +15,21 @@
                 <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.2s">
                     <div class="exciting_box f_pd">
                         <img src="{{asset('assets')}}/images/exciting_img-01.jpg" class="icon-small" alt="" />
-                        <h4>Explore <strong>exciting</strong> and exotic products
-                            tailored to you.
+                        <h4><strong>Üyelik Sistemi</strong>
                         </h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris..
+                        <p>Kitapi çevrimiçi bir servistir. macOS, Linux veya Windows işletim sistemleri üzerindeki herhangi bir modern tarayıcıda çalışır.
+                            Kurulum gerekmez. Kayıt olup hemen kullanmaya başlayabilirsin.
                         </p>
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-6 wow fadeIn" data-wow-delay="0.4s">
                     <div class="exciting_box l_pd">
                         <img src="{{asset('assets')}}/images/exciting_img-02.jpg" class="icon-small" alt="" />
-                        <h4><strong>List your products on</strong> chamb and grow connections.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                            quis nostrud exercitation ullamco laboris..
+                        <h4><strong>Kitap Ödünç Almak..</strong> </h4>
+                        <p>Akademik personel ile doktora öğrencileri 25 kitabı 30 gün; yüksek lisans öğrencileri 20 kitabı 30 gün; lisans öğrencileri 15 kitabı 15 gün;
+                            idari personel 15 kitabı 30 gün;
+                            emekli akademik personel 15 kitabı 30 gün,
+                            emekli idari personel 5 kitabı 30 gün süreyle ödünç alabilir.
                         </p>
                     </div>
                 </div>
@@ -119,30 +118,11 @@
     </div>
     <div class="products">
         <div class="main-products">
-            <h2>TRENDING PRODUCTS ON CHAMB</h2>
+            <h2>Kitaplar</h2>
             <div class="product-slidr">
                 <div class="slider">
-                    <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr1.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Table with Lights</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
-                                </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
+                    <div >    <!-- alt slider-->
+
                         <div class="prod-box">
                             <div class="prod-i">
                                 <img src="{{asset('assets')}}/images/tr2.png" alt="#" />
@@ -161,105 +141,29 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div><!-- alt slider btiş-->
                     <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr3.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Wood Sofaplatform</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
+
+                            <div class="prod-box">
+                                <div class="prod-i">
+                                    <img src="{{asset('assets')}}/images/tr2.png" alt="#" />
                                 </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
+                                <div class="prod-dit clearfix">
+                                    <div class="dit-t clearfix">
+                                        <div class="left-ti">
+                                            <h4>Treehouse Bed</h4>
+                                            <p>By <span>Beko</span> under <span>Lights</span></p>
+                                        </div>
+                                        <a href="#">$1220</a>
+                                    </div>
+                                    <div class="dit-btn clearfix">
+                                        <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
+                                        <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr4.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Wall Sticker</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
-                                </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr1.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Treehouse Bed</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
-                                </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr2.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Treehouse Bed</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
-                                </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div>
-                        <div class="prod-box">
-                            <div class="prod-i">
-                                <img src="{{asset('assets')}}/images/tr3.png" alt="#" />
-                            </div>
-                            <div class="prod-dit clearfix">
-                                <div class="dit-t clearfix">
-                                    <div class="left-ti">
-                                        <h4>Treehouse Bed</h4>
-                                        <p>By <span>Beko</span> under <span>Lights</span></p>
-                                    </div>
-                                    <a href="#">$1220</a>
-                                </div>
-                                <div class="dit-btn clearfix">
-                                    <a class="wis" href="#"><i class="fa fa-star" aria-hidden="true"></i> Save to wishlist </a>
-                                    <a class="thi" href="#"><i class="fa fa-thumbs-up" aria-hidden="true"></i> Like this</a>
-                                </div>
-                            </div>
+
                         </div>
                     </div>
                 </div>
