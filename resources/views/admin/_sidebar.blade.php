@@ -16,6 +16,13 @@
                     <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_category')}}"
                        aria-expanded="false">
                         <i class="fa fa-user" aria-hidden="true"></i>
+                        <span class="hide-menu">Kategoriler</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_books')}}"
+                       aria-expanded="false">
+                        <i class="fa fa-user" aria-hidden="true"></i>
                         <span class="hide-menu">Ürünler</span>
                     </a>
                 </li>

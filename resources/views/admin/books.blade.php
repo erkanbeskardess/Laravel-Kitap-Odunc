@@ -34,7 +34,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h3 class="box-title">Kategoriler</h3>
+                        <h3 class="box-title">Ürünler</h3>
                     </div>
                     <div class="white-box">
                         <div class="table-responsive">
@@ -42,10 +42,16 @@
                                 <thead>
                                 <tr>
                                     <th class="border-top-0">ID</th>
-                                    <th class="border-top-0">Parent</th>
                                     <th class="border-top-0">Kategori</th>
-                                    <th class="border-top-0">Statü</th>
+                                    <th class="border-top-0">Başlık</th>
+                                    <th class="border-top-0">Kitap Adı</th>
+                                    <th class="border-top-0">Yazar</th>
+                                    <th class="border-top-0">Yayın evi</th>
+                                    <th class="border-top-0">Fiyat</th>
                                     <th class="border-top-0">Açıklama</th>
+                                    <th class="border-top-0">Detay</th>
+                                    <th class="border-top-0">Sayfa Sayısı</th>
+                                    <th class="border-top-0">Statü</th>
                                     <th class="border-top-0">Düzenle</th>
                                     <th class="border-top-0">Sil</th>
                                 </tr>
@@ -56,13 +62,23 @@
                                 <tbody>
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td class="txt-oflo">{{ $rs->parent_id }}</td>
+                                    <td class="txt-oflo">{{ $rs->category_id }}</td>
                                     <td>{{ $rs->title }}</td>
+
+                                    <td>{{ $rs->name }}</td>
+                                    <td>{{ $rs->novelist }}</td>
+                                    <td>{{ $rs->publisher }}</td>
+                                    <td>{{ $rs->price }}</td>
+                                    <td>{{ $rs->image }}</td>
+                                    <td><span class="text-success">{{ $rs->description }}</span></td>
+                                    <td>{{ $rs->detail }}</td>
+                                    <td>{{ $rs->page }}</td>
+
                                     <td class="txt-oflo">{{ $rs->status }}</td>
 
-                                    <td><span class="text-success">{{ $rs->description }}</span></td>
-                                    <td class="txt-oflo" ><a href="{{route('admin_category_edit',['id'=>$rs->id])}}" onclick="return confirm('Silmek İstediğinize emin misiniz?')">Edit</a></td>
-                                    <td class="txt-oflo"><a href="{{route('admin_category_delete',['id'=>$rs->id])}}" onclick="return confirm('Silmek İstediğinize emin misiniz?')">Delete</a></td>
+
+                                    <td class="txt-oflo" ><a href="{{route('admin_books_edit',['id'=>$rs->id])}}" >Edit</a></td>
+                                    <td class="txt-oflo"><a href="{{route('admin_books_delete',['id'=>$rs->id])}}" onclick="return confirm('Silmek İstediğinize emin misiniz?')">Delete</a></td>
                                 </tr>
                                 </tbody>
                                 @endforeach

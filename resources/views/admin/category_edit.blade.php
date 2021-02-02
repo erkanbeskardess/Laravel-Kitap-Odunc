@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title','KtpOdunc Admin Panel')
+@section('title','Düzenleme')
 @section('content')
     <div class="page-wrapper" style="min-height: 250px;">
         <!-- ============================================================== -->
@@ -38,14 +38,14 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h3 class="box-title">Kategori Ekleme</h3>
+                        <h3 class="box-title">Kategori Düzenleme</h3>
                     </div>
                     <div class="white-box">
                         <h3 class="box-title">FORM</h3>
 
                         <div class="container-contact100">
                             <div class="wrap-contact100">
-                                <form  action="{{route('admin_category_create')}}" method="post" class="contact100-form validate-form">
+                                <form  action="{{route('admin_category_update',['id'=>$data->id])}}" method="post" class="contact100-form validate-form">
                                     @csrf
 				<span class="contact100-form-title">
 
@@ -55,31 +55,31 @@
                                        Ana Kategoriler
 
                                         <select name="parent_id">
+                                            <option  value="{{$data->parent_id}}" style="..."></option>
                                             @foreach($datalist as $rs)
-                                            <option  value="{{$rs->parent_id}}">{{$rs->title}}</option>
+                                            <option  value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >{{$rs->title}}</option>
                                             @endforeach
                                         </select>
 
 
                                     </div>
+                                <div class="wrap-input100 validate-input" >
+
+                                        <input class="input100"  type="text" name="title" value="{{$data->title}}" placeholder="Kategorisi">
+                                    </div>
+
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="parent_id" placeholder="Kategori Adı">
+                                        <input class="input100" type="text" name="description" value="{{$data->description}}" placeholder="Adı">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="title" placeholder="Titlesi">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="keywords" placeholder="Adı">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="description" placeholder="Açıklama">
+                                        <input class="input100"  type="text" name="keywords" value="{{$data->keywords}}" placeholder="Kitabın Adı">
                                     </div>
 
                                     <div class="contact100-form-checkbox" >
                                         Statü
                                         <select name="status">
                                             <option>True</option>
-                                            <option selected="selected">False</option>
+                                            <option selected="selected" value="{{$data->status}}">False</option>
                                         </select>
 
                                     </div>
@@ -93,7 +93,7 @@
                                         <div class="wrap-contact100-form-btn">
                                             <div class="contact100-form-bgbtn"></div>
                                             <button class="contact100-form-btn">
-                                                EKLE
+                                                Düzenle
                                             </button>
                                         </div>
                                     </div>

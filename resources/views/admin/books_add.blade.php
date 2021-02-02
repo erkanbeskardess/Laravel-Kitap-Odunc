@@ -45,7 +45,7 @@
 
                         <div class="container-contact100">
                             <div class="wrap-contact100">
-                                <form  action="{{route('admin_category_create')}}" method="post" class="contact100-form validate-form">
+                                <form  action="{{route('admin_books_create')}}" method="post" class="contact100-form validate-form">
                                     @csrf
 				<span class="contact100-form-title">
 
@@ -54,7 +54,7 @@
                                     <div class="contact100-form-checkbox">
                                        Ana Kategoriler
 
-                                        <select name="parent_id">
+                                        <select name="category_id">
                                             @foreach($datalist as $rs)
                                             <option  value="{{$rs->parent_id}}">{{$rs->title}}</option>
                                             @endforeach
@@ -62,17 +62,32 @@
 
 
                                     </div>
+
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="parent_id" placeholder="Kategori Adı">
+                                        <input class="input100" type="text" name="title" placeholder="Başlık">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="title" placeholder="Titlesi">
+                                        <input class="input100" type="text" name="name" placeholder="Kitabın adı">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="keywords" placeholder="Adı">
+                                        <input class="input100" type="text" name="novelist" placeholder="Yazar">
                                     </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100" type="text" name="publisher" placeholder="Yayın Evi">
+                                    </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100" type="number" name="price" placeholder="Fiyat">
+                                    </div>
+
                                     <div class="wrap-input100 validate-input" >
                                         <input class="input100"  type="text" name="description" placeholder="Açıklama">
+                                    </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100"  type="text" name="detail" placeholder="Detay">
+                                    </div>
+
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100"  type="number" name="page" placeholder="Sayfa Sayısı">
                                     </div>
 
                                     <div class="contact100-form-checkbox" >
@@ -92,7 +107,7 @@
                                     <div class="container-contact100-form-btn">
                                         <div class="wrap-contact100-form-btn">
                                             <div class="contact100-form-bgbtn"></div>
-                                            <button class="contact100-form-btn">
+                                            <button  class="contact100-form-btn">
                                                 EKLE
                                             </button>
                                         </div>

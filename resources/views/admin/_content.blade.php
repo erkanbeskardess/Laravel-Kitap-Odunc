@@ -10,11 +10,16 @@
             <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
                 <div class="d-md-flex">
                     <ol class="breadcrumb ml-auto">
-                        <li><a href="#">Dashboard</a></li>
+
                     </ol>
                     @auth
-                    <a href="{{route('admin_logout')}}" target="_blank"
-                       class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Logout</a>
+
+                        <li><a href="{{route('admin_books_add')}}"
+                               class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Ürün ekle</a></li>
+                        <li><a href="{{route('admin_category_add')}}"
+                               class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Kategori ekle</a></li>
+                        <a href="{{route('admin_logout')}}" target="_blank"
+                           class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Logout</a>
                     @endauth
                 </div>
             </div>
