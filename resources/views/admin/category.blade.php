@@ -19,7 +19,7 @@
                         @auth
                             <li><a href="{{route('admin_category_add')}}"
                                    class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Kategori ekle</a></li>
-                            <li><a href="{{route('admin_books_create')}}"
+                            <li><a href="{{route('admin_books_add')}}"
                                    class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Ürün ekle</a></li>
                             <a href="{{route('admin_logout')}}" target="_blank"
                                class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Logout</a>

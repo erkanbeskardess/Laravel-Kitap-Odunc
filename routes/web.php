@@ -51,11 +51,11 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 });
 
-Route::prefix('books')->group(function (){
+Route::prefix('books')->middleware('auth')->group(function (){
 
     Route::get('/', [\App\Http\Controllers\Admin\BooksController::class, 'index'])->name('admin_books');
-    Route::get('/create', [\App\Http\Controllers\Admin\BooksController::class, 'create'])->name('admin_books_create');
-    Route::post('/store', [\App\Http\Controllers\Admin\BooksController::class, 'store'])->name('admin_books_store');
+    Route::get('/create', [\App\Http\Controllers\Admin\BooksController::class, 'create'])->name('admin_books_add');
+    Route::post('/store', [\App\Http\Controllers\Admin\BooksController::class, 'store'])->name('admin_books_create');
     Route::get('edit/{id}', [\App\Http\Controllers\Admin\BooksController::class, 'edit'])->name('admin_books_edit');
     Route::post('update/{id}', [\App\Http\Controllers\Admin\BooksController::class, 'update'])->name('admin_books_update');
     Route::get('delete/{id}', [\App\Http\Controllers\Admin\BooksController::class, 'destroy'])->name('admin_books_delete');

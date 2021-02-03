@@ -29,7 +29,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        $datalist = Category::all();
+        $datalist = DB::table('categories')->get()->where('parent_id', 0);
 
         return view('admin.books_add',['datalist' => $datalist]);
     }
@@ -42,20 +42,19 @@ class BooksController extends Controller
      */
     public function store(Request $request)
     {
-        $data =  new Books;
+        $data =  new Books();
         $data->title=$request->input('title',100);
-        $data->keywords=$request->input('keywords')->nullable();
+        $data->keywords=$request->input('keywords');
         $data->description=$request->input('description',200);
-        $data->detail=$request->input('detail',)->nullable();
-        $data->menu_id=$request->input('menu_id')->nullable();
-        $data->image=$request->input('image' )->nullable();
+        $data->detail=$request->input('detail',);
+        $data->menu_id=$request->input('menu_id');
         $data->user_id=Auth::id();
-        $data->status=$request->input('status')->nullable()->default('False');
+        $data->status=$request->input('status');
         $data->name=$request->input('name',50);
         $data->novelist=$request->input('novelist',50);
         $data->publisher=$request->input('publisher',50);
-        $data->price=$request->input('price')->nullable();
-        $data->page=$request->input('page')->nullable();
+        $data->price=$request->input('price');
+        $data->page=$request->input('page');
         $data->save();
         return redirect()->route('admin_books');
     }
@@ -77,9 +76,12 @@ class BooksController extends Controller
      * @param  \App\Models\Books  $books
      * @return \Illuminate\Http\Response
      */
-    public function edit(Books $books)
+    public function edit(Books $books,$id)
     {
-        //
+        $data = Books::find($id);
+        $datalist = Category::all();
+
+        return view('admin.books_edit', ['data' => $data,'datalist' => $datalist]);
     }
 
     /**
@@ -89,9 +91,23 @@ class BooksController extends Controller
      * @param  \App\Models\Books  $books
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Books $books)
+    public function update(Request $request, Books $books,$id)
     {
-        //
+        $data = Books::find($id);
+        $data->title=$request->input('title',100);
+        $data->keywords=$request->input('keywords');
+        $data->description=$request->input('description',200);
+        $data->detail=$request->input('detail',);
+        $data->menu_id=$request->input('menu_id');
+        $data->user_id=Auth::id();
+        $data->status=$request->input('status');
+        $data->name=$request->input('name',50);
+        $data->novelist=$request->input('novelist',50);
+        $data->publisher=$request->input('publisher',50);
+        $data->price=$request->input('price');
+        $data->page=$request->input('page');
+        $data->save();
+        return redirect()->route('admin_books');
     }
 
     /**
@@ -100,7 +116,9 @@ class BooksController extends Controller
      * @param  \App\Models\Books  $books
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Books $books)
+    public function destroy(Books $books,$id)
     {
+        DB::table('books')->where('id', '=', $id)->delete();
+        return redirect()->route('admin_books');
     }
 }

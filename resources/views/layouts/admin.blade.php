@@ -25,6 +25,8 @@
     <!--===============================================================================================-->
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/css/util.css">
     <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/css/main.css">
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- Tell the browser to be responsive to screen width -->
@@ -43,6 +45,7 @@
     <link rel="stylesheet" href="{{asset('assets')}}/admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.css">
     <!-- Custom CSS -->
     <link href="{{asset('assets')}}/admin/css/style.min.css" rel="stylesheet">
+
 </head>
 
 <body>
