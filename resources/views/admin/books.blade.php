@@ -21,7 +21,7 @@
                                    class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Kategori ekle</a></li>
                             <li><a href="{{route('admin_books_add')}}"
                                    class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Ürün ekle</a></li>
-                            <a href="{{route('admin_logout')}}" target="_blank"
+                            <a href="{{route('admin_logout')}}"
                                class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Logout</a>
                         @endauth
                     </div>
@@ -48,6 +48,7 @@
                                     <th class="border-top-0">Yazar</th>
                                     <th class="border-top-0">Yayın evi</th>
                                     <th class="border-top-0">Fotoğraflar</th>
+                                    <th class="border-top-0">Galeri</th>
                                     <th class="border-top-0">Fiyat</th>
                                     <th class="border-top-0">Sayfa Sayısı</th>
                                     <th class="border-top-0">Statü</th>
@@ -72,6 +73,7 @@
                                             <img src="{{Storage::url($rs->image)}}" height="100" alt="">
                                         @endif
                                     </td>
+                                    <td><a href="{{route('admin_image_add',['Book_id'=>$rs->id])}}" target="_blank" ><img src="{{asset('assets/admin/plugins/images')}}/gallery.png" height="50"></a> </td>
                                     <td>{{ $rs->price }}</td>
 
                                     <td>{{ $rs->page }}</td>

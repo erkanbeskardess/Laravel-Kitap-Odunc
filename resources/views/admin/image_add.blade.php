@@ -1,30 +1,32 @@
-@extends('layouts.admin')
-@section('title','KtpOdunc Admin Panel')
-@section('content')
+<html>
+<head>
+    <link rel="icon" type="image/png" href="{{asset('assets')}}/admin/add/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/css/util.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/admin/add/css/main.css">
+</head>
+
+
     <div class="page-wrapper" style="min-height: 250px;">
         <!-- ============================================================== -->
         <!-- Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
-        <div class="page-breadcrumb bg-white">
-            <div class="row align-items-center">
-                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-                    <h4 class="page-title text-uppercase font-medium font-14">Ürünler</h4>
-                </div>
-                <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
-                    <div class="d-md-flex">
-                        <ol class="breadcrumb ml-auto">
-
-                        </ol>
-                        @auth
-
-                            <a href="{{route('admin_logout')}}" target="_blank"
-                               class="btn btn-danger  d-none d-md-block pull-right m-l-20 hidden-xs hidden-sm waves-effect waves-light">Çıkış</a>
-                        @endauth
-                    </div>
-                </div>
-            </div>
-            <!-- /.col-lg-12 -->
-        </div>
         <!-- ============================================================== -->
         <!-- End Bread crumb and right sidebar toggle -->
         <!-- ============================================================== -->
@@ -37,80 +39,66 @@
             <!-- ============================================================== -->
             <div class="row">
                 <div class="col-md-12">
+
                     <div class="white-box">
-                        <h3 class="box-title">Kategori Ekleme</h3>
-                    </div>
-                    <div class="white-box">
-                        <h3 class="box-title">FORM</h3>
+
 
                         <div class="container-contact100">
                             <div class="wrap-contact100">
-                                <form  action="{{route('admin_image_create' , ['id'=>$data->id])}}" method="post" enctype="multipart/form-data" class="contact100-form validate-form">
+                                <form  action="{{route('admin_image_store' , ['Book_id'=>$data->id])}}" method="post" enctype="multipart/form-data" class="contact100-form validate-form">
                                     @csrf
 				<span class="contact100-form-title">
 
 				</span>
 
-                                    <div class="contact100-form-checkbox">
-                                       Ana Kategoriler
-
-                                        <select name="category_id">
-                                            @foreach($datalist as $rs)
-                                            <option  value="{{$rs->parent_id}}">{{$rs->title}}</option>
-                                            @endforeach
-                                        </select>
 
 
+
+                                    <h1>Fotoğraf</h1>
+                                    <br>
+                                    Ürün adı:{{$data->title}}
+                                    <br>
+                                    <h3>Başlık</h3>
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100" type="text" name="title">
                                     </div>
 
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="title" placeholder="Başlık">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="name" placeholder="Kitabın adı">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="novelist" placeholder="Yazar">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="publisher" placeholder="Yayın Evi">
-                                    </div>
-                                    <label><p>Fotoğraf</p></label>
+                                    <h3>Fotoğraf</h3>
                                     <div class="wrap-input100 validate-input" >
 
                                         <input class="input100"  type="file" name="image">
                                     </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="number" name="price" placeholder="Fiyat">
-                                    </div>
+                                    <table class="table no-wrap">
+                                        <thead>
+                                        <tr>
+                                            <th class="border-top-0">ID</th>
+                                            <th class="border-top-0">Başlık</th>
+                                            <th class="border-top-0">Fotoğraflar</th>
+                                            <th class="border-top-0">Kategori</th>
 
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="description" placeholder="Açıklama">
-                                    </div>
+                                        </tr>
+                                        </thead>
+                                        @foreach ($images as $rs )
 
-                                        <label><p>Detay</p></label>
+                                            <tbody>
+                                            <tr>
+                                                <td>{{ $rs->id }}</td>
+                                                <td>{{ $rs->title }}</td>
+                                                <td>
+                                                    @if ($rs->image)
+                                                        <img src="{{Storage::url($rs->image)}}" height="100" alt="">
+                                                    @endif
+                                                </td>
 
-                                    <div class="wrap-input100 validate-input" >
-                                    <textarea class="form-control" id="summary-ckeditor" name="detail"></textarea>
-                                        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
-                                        <script>
-                                            CKEDITOR.replace( 'summary-ckeditor' );
-                                        </script>
-                                    </div>
 
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="number" name="page" placeholder="Sayfa Sayısı">
-                                    </div>
 
-                                    <div class="contact100-form-checkbox" >
-                                        Statü
-                                        <select name="status">
-                                            <option>True</option>
-                                            <option selected="selected">False</option>
-                                        </select>
+                                                <td class="txt-oflo"><a href="{{route('admin_image_delete',['id'=>$rs->id , 'Book_id'=>$data->id])}}" onclick="return confirm('Silmek İstediğinize emin misiniz?')"><img src="{{asset('assets/admin/plugins/images')}}/delete.png" height="50"></a></td>
+                                            </tr>
 
-                                    </div>
 
+                                            </tbody>
+                                        @endforeach
+                                    </table>
 
 
 
@@ -172,4 +160,4 @@
             gtag('config', 'UA-23581568-13');
         </script>
 
-@endsection
+</html>

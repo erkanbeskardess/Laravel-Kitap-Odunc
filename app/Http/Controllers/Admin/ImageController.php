@@ -6,6 +6,8 @@ use App\Http\Controllers\Controller;
 use App\Models\Books;
 use App\Models\Image;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class ImageController extends Controller
 {
@@ -25,11 +27,14 @@ class ImageController extends Controller
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function create($id)
+    public function create($Book_id)
 
     {
-        $data = Books::all();
-        return view('admin.image_add', ['data' => $data]);
+        $data = Books::find($Book_id);
+
+        $images = DB::table('images')->where('Book_id','=',$Book_id)->get();
+
+        return view('admin.image_add', ['data' => $data,'images'=>$images]);
 
     }
 
@@ -39,9 +44,14 @@ class ImageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request,$Book_id)
     {
-        //
+        $data =  new Image();
+        $data->title=$request->input('title',100);
+        $data->Book_id=$Book_id;
+        $data->image =Storage::putFile('images',$request->file('image'));
+        $data->save();
+        return redirect()->route('admin_image_add',['Book_id'=>$Book_id]);
     }
 
     /**
@@ -84,8 +94,10 @@ class ImageController extends Controller
      * @param  \App\Models\Image  $image
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Image $image)
+    public function destroy(Image $image,$id,$Book_id)
     {
-        //
+        $data = Image::find($id);
+        $data->delete();
+        return redirect()->route('admin_image_add',['Book_id'=>$Book_id]);
     }
 }
