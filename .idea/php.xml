@@ -118,6 +118,13 @@
       <path value="$PROJECT_DIR$/vendor/phpspec/prophecy" />
       <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
       <path value="$PROJECT_DIR$/vendor/graham-campbell/result-type" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/lang" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/plugins" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/samples" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/skins" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/vendor" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/adapters" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/.github" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.3" />

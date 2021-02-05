@@ -45,7 +45,7 @@
 
                         <div class="container-contact100">
                             <div class="wrap-contact100">
-                                <form  action="{{route('admin_books_create')}}" method="post" enctype="multipart/form-data" class="contact100-form validate-form">
+                                <form  action="{{route('admin_image_create' , ['id'=>$data->id])}}" method="post" enctype="multipart/form-data" class="contact100-form validate-form">
                                     @csrf
 				<span class="contact100-form-title">
 

@@ -47,9 +47,8 @@
                                     <th class="border-top-0">Kitap Adı</th>
                                     <th class="border-top-0">Yazar</th>
                                     <th class="border-top-0">Yayın evi</th>
+                                    <th class="border-top-0">Fotoğraflar</th>
                                     <th class="border-top-0">Fiyat</th>
-                                    <th class="border-top-0">Açıklama</th>
-                                    <th class="border-top-0">Detay</th>
                                     <th class="border-top-0">Sayfa Sayısı</th>
                                     <th class="border-top-0">Statü</th>
                                     <th class="border-top-0">Düzenle</th>
@@ -68,9 +67,13 @@
                                     <td>{{ $rs->name }}</td>
                                     <td>{{ $rs->novelist }}</td>
                                     <td>{{ $rs->publisher }}</td>
+                                    <td>
+                                        @if ($rs->image)
+                                            <img src="{{Storage::url($rs->image)}}" height="100" alt="">
+                                        @endif
+                                    </td>
                                     <td>{{ $rs->price }}</td>
-                                    <td><span class="text-success">{{ $rs->description }}</span></td>
-                                    <td>{{ $rs->detail }}</td>
+
                                     <td>{{ $rs->page }}</td>
 
                                     <td class="txt-oflo">{{ $rs->status }}</td>

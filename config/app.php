@@ -134,7 +134,7 @@ return [
     |
     */
 
-    'providers' => [
+    'providers' => array(
 
         /*
          * Laravel Framework Service Providers...
@@ -167,6 +167,7 @@ return [
          */
 
         /*
+         *
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -177,7 +178,7 @@ return [
         App\Providers\FortifyServiceProvider::class,
         App\Providers\JetstreamServiceProvider::class,
 
-    ],
+    ),
 
     /*
     |--------------------------------------------------------------------------

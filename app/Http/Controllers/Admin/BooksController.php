@@ -8,6 +8,7 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class BooksController extends Controller
 {
@@ -55,6 +56,7 @@ class BooksController extends Controller
         $data->publisher=$request->input('publisher',50);
         $data->price=$request->input('price');
         $data->page=$request->input('page');
+        $data->image =Storage::putFile('images',$request->file('image'));
         $data->save();
         return redirect()->route('admin_books');
     }
@@ -106,6 +108,7 @@ class BooksController extends Controller
         $data->publisher=$request->input('publisher',50);
         $data->price=$request->input('price');
         $data->page=$request->input('page');
+        $data->image =Storage::putFile('images',$request->file('image'));
         $data->save();
         return redirect()->route('admin_books');
     }

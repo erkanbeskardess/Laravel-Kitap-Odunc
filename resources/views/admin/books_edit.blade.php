@@ -45,7 +45,7 @@
 
                         <div class="container-contact100">
                             <div class="wrap-contact100">
-                                <form  action="{{route('admin_books_update',['id'=>$data->id])}}" method="post" class="contact100-form validate-form">
+                                <form  action="{{route('admin_books_update',['id'=>$data->id])}}" method="post" class="contact100-form validate-form" enctype="multipart/form-data">
                                     @csrf
 				<span class="contact100-form-title">
 
@@ -78,12 +78,24 @@
                                     <div class="wrap-input100 validate-input" >
                                         <input class="input100" type="number" name="price" value="{{$data->price}}"placeholder="Fiyat">
                                     </div>
+                                    <label><p>Fotoğraf</p></label>php
+                                    <div class="wrap-input100 validate-input" >
+
+                                        <input class="input100"  type="file" name="image" value="{{$data->image}}" >
+                                        @if ($data->image)
+                                            <img src="{{Storage::url($data->image)}}" height="100"  alt="">
+                                        @endif
+                                    </div>
 
                                     <div class="wrap-input100 validate-input" >
                                         <input class="input100"  type="text" name="description" value="{{$data->description}} "placeholder="Açıklama">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="detail" value="{{$data->detail}}" placeholder="Detay">
+                                        <textarea class="form-control" id="summary-ckeditor" name="detail">{{$data->detail}}</textarea>
+                                        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+                                        <script>
+                                            CKEDITOR.replace( 'summary-ckeditor' );
+                                        </script>
                                     </div>
 
                                     <div class="wrap-input100 validate-input" >

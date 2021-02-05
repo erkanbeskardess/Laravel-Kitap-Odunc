@@ -29,7 +29,6 @@
 <script src="{{asset('assets')}}/admin/plugins/bower_components/chartist/dist/chartist.min.js"></script>
 <script src="{{asset('assets')}}/admin/plugins/bower_components/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
 <script src="{{asset('assets')}}/admin/js/pages/dashboards/dashboard1.js"></script>
-
 </body>
 
 </html>
