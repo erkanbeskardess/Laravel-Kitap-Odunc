@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('keywords')->nullable();
             $table->string('description',200);
             $table->text('detail',)->nullable();
-            $table->integer('menu_id')->nullable();
+            $table->integer('categories_id')->nullable();
             $table->string('image' )->nullable();
             $table->integer('user_id')->nullable();
             $table->string('status')->nullable()->default('False');

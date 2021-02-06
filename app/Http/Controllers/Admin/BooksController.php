@@ -30,7 +30,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        $datalist = DB::table('categories')->get()->where('parent_id', 0);
+        $datalist = DB::table('categories')->get();
 
         return view('admin.books_add',['datalist' => $datalist]);
     }
@@ -48,7 +48,7 @@ class BooksController extends Controller
         $data->keywords=$request->input('keywords');
         $data->description=$request->input('description',200);
         $data->detail=$request->input('detail',);
-        $data->menu_id=$request->input('menu_id');
+        $data->categories_id=$request->input('categories_id');
         $data->user_id=Auth::id();
         $data->status=$request->input('status');
         $data->name=$request->input('name',50);
@@ -100,7 +100,7 @@ class BooksController extends Controller
         $data->keywords=$request->input('keywords');
         $data->description=$request->input('description',200);
         $data->detail=$request->input('detail',);
-        $data->menu_id=$request->input('menu_id');
+        $data->categories_id=$request->input('categories_id');
         $data->user_id=Auth::id();
         $data->status=$request->input('status');
         $data->name=$request->input('name',50);
@@ -108,7 +108,9 @@ class BooksController extends Controller
         $data->publisher=$request->input('publisher',50);
         $data->price=$request->input('price');
         $data->page=$request->input('page');
-        $data->image =Storage::putFile('images',$request->file('image'));
+        if($request->file('image')){
+            $data->image =Storage::putFile('images',$request->file('image'));
+        }
         $data->save();
         return redirect()->route('admin_books');
     }

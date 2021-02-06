@@ -81,7 +81,7 @@
                                     <label><p>Fotoğraf</p></label>php
                                     <div class="wrap-input100 validate-input" >
 
-                                        <input class="input100"  type="file" name="image" value="{{$data->image}}" >
+                                        <input class="input100"  type="file" name="image" >
                                         @if ($data->image)
                                             <img src="{{Storage::url($data->image)}}" height="100"  alt="">
                                         @endif

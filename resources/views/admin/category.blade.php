@@ -42,7 +42,6 @@
                                 <thead>
                                 <tr>
                                     <th class="border-top-0">ID</th>
-                                    <th class="border-top-0">Parent</th>
                                     <th class="border-top-0">Kategori</th>
                                     <th class="border-top-0">Statü</th>
                                     <th class="border-top-0">Açıklama</th>
@@ -56,7 +55,6 @@
                                 <tbody>
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td class="txt-oflo">{{ $rs->parent_id }}</td>
                                     <td>{{ $rs->title }}</td>
                                     <td class="txt-oflo">{{ $rs->status }}</td>
 

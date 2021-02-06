@@ -54,9 +54,9 @@
                                     <div class="contact100-form-checkbox">
                                        Ana Kategoriler
 
-                                        <select name="category_id">
+                                        <select name="categories_id">
                                             @foreach($datalist as $rs)
-                                            <option  value="{{$rs->parent_id}}">{{$rs->title}}</option>
+                                            <option  value="{{$rs->id}}">{{$rs->title}}</option>
                                             @endforeach
                                         </select>
 

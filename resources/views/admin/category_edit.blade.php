@@ -51,18 +51,7 @@
 
 				</span>
 
-                                    <div class="contact100-form-checkbox">
-                                       Ana Kategoriler
 
-                                        <select name="parent_id">
-                                            <option  value="{{$data->parent_id}}" style="..."></option>
-                                            @foreach($datalist as $rs)
-                                            <option  value="{{$rs->id}}" @if ($rs->id == $data->parent_id) selected="selected" @endif >{{$rs->title}}</option>
-                                            @endforeach
-                                        </select>
-
-
-                                    </div>
                                 <div class="wrap-input100 validate-input" >
 
                                         <input class="input100"  type="text" name="title" value="{{$data->title}}" placeholder="Kategorisi">
@@ -76,10 +65,12 @@
                                     </div>
 
                                     <div class="contact100-form-checkbox" >
-                                        Statü
+                                       Statü  <label> {{$data->status}}</label>
+<br>
                                         <select name="status">
-                                            <option>True</option>
-                                            <option selected="selected" value="{{$data->status}}">False</option>
+
+                                            <option value="true">True</option>
+                                            <option value="false">False</option>
                                         </select>
 
                                     </div>

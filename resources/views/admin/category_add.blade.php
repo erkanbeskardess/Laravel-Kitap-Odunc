@@ -51,25 +51,13 @@
 
 				</span>
 
-                                    <div class="contact100-form-checkbox">
-                                       Ana Kategoriler
-
-                                        <select name="parent_id">
-                                            @foreach($datalist as $rs)
-                                            <option  value="{{$rs->parent_id}}">{{$rs->title}}</option>
-                                            @endforeach
-                                        </select>
 
 
+                                    <div class="wrap-input100 validate-input" >
+                                        <input class="input100" type="text" name="title" placeholder="Başlık">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="parent_id" placeholder="Kategori Adı">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100" type="text" name="title" placeholder="Titlesi">
-                                    </div>
-                                    <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="text" name="keywords" placeholder="Adı">
+                                        <input class="input100"  type="text" name="keywords" placeholder="Anahtar kelimeler">
                                     </div>
                                     <div class="wrap-input100 validate-input" >
                                         <input class="input100"  type="text" name="description" placeholder="Açıklama">

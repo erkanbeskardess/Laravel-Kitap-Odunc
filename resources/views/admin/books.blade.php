@@ -73,7 +73,7 @@
                                             <img src="{{Storage::url($rs->image)}}" height="100" alt="">
                                         @endif
                                     </td>
-                                    <td><a href="{{route('admin_image_add',['Book_id'=>$rs->id])}}" target="_blank" ><img src="{{asset('assets/admin/plugins/images')}}/gallery.png" height="50"></a> </td>
+                                    <td><a href="{{route('admin_image_add',['books_id'=>$rs->id])}}" target="_blank" ><img src="{{asset('assets/admin/plugins/images')}}/gallery.png" height="50"></a> </td>
                                     <td>{{ $rs->price }}</td>
 
                                     <td>{{ $rs->page }}</td>

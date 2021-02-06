@@ -31,7 +31,7 @@ class CategoryController extends Controller
      */
     public function add()
     {
-        $datalist = DB::table('categories')->get()->where('parent_id', 0);
+        $datalist = DB::table('categories')->get();
 
         return view('admin.category_add', ['datalist' => $datalist]);
     }
@@ -43,7 +43,6 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         DB::table('categories')->insert([
-            'parent_id' => $request->input('parent_id'),
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'keywords' => $request->input('keywords'),
@@ -85,7 +84,7 @@ class CategoryController extends Controller
 
     {
         $data = Category::find($id);
-        $datalist = DB::table('categories')->get()->where('parent_id', 0);
+        $datalist = DB::table('categories')->get();
 
         return view('admin.category_edit', ['data' => $data,'datalist' => $datalist]);
     }
@@ -100,7 +99,6 @@ class CategoryController extends Controller
     public function update(Category $category,Request $request, int $id)
     {
         $data = Category::find($id);
-        $data->parent_id = $request->input('parent_id');
         $data->title  = $request->input('title');
         $data->description  = $request->input('description');
         $data->keywords = $request->input('keywords');
