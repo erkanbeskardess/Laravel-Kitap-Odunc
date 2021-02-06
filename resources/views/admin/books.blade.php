@@ -62,7 +62,7 @@
                                 <tbody>
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td class="txt-oflo">{{ $rs->category_id }}</td>
+                                    <td>{{ $rs->categories->title}}</td>
                                     <td>{{ $rs->title }}</td>
 
                                     <td>{{ $rs->name }}</td>
