@@ -18,7 +18,11 @@
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap-select.min.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/slick.min.css">
     <!--responsive css-->
-    <link rel="stylesheet" href="{{asset('assets')}}/css/responsive.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/menus.css">
+
+    <script type="text/javascript" src="{{asset('assets')}}/js/jquery.js"></script>
+    <script type="text/javascript" src="{{asset('assets')}}/js/function.js"></script>
 </head>
 <body>
 @include('home._header')

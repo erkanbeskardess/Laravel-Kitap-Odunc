@@ -2,15 +2,21 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
-    //
+    public static function categoryList()
+    {
+        return Category::where('parent_id','=', 0)->with('children')->get();
+    }
 
     public function index(){
-        return view('home.index');
+        $setting=Setting::all();
+        return view('home.index',['setting'=>$setting]);
     }
     public function login(){
         return view('admin.login');
@@ -20,7 +26,7 @@ class HomeController extends Controller
 
         if($request->isMethod('post'))
         {
-            $credentials =$request->only('eamil','password');
+            $credentials =$request->only('email','password');
             if(Auth::attempt($credentials)){
                 $request->session()->regenerate();
                 return redirect()->intended('admin');

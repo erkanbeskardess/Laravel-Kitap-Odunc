@@ -56,13 +56,13 @@
                                     <th class="border-top-0">Sil</th>
                                 </tr>
                                 </thead>
-                                @foreach ($datalist as $rs )
-                                    <p></p>
+
 
                                 <tbody>
+                                @foreach ($datalist as $rs )
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-                                    <td>{{ $rs->categories->title}}</td>
+                                    <td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs->category,$rs->category->title) }}</td>
                                     <td>{{ $rs->title }}</td>
 
                                     <td>{{ $rs->name }}</td>
@@ -70,7 +70,7 @@
                                     <td>{{ $rs->publisher }}</td>
                                     <td>
                                         @if ($rs->image)
-                                            <img src="{{Storage::url($rs->image)}}" height="100" alt="">
+                                            <img src="{{Storage::url($rs->image)}}" height="50" alt="">
                                         @endif
                                     </td>
                                     <td><a href="{{route('admin_image_add',['books_id'=>$rs->id])}}" target="_blank" ><img src="{{asset('assets/admin/plugins/images')}}/gallery.png" height="50"></a> </td>

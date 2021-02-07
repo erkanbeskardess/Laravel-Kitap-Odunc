@@ -1,8 +1,15 @@
 @extends('layouts.main')
-@section('title','KtpOdunc')
+@section('title')
+    {{$setting->title}}
+@endsection
 @section('description')
 
-    Güvenle kitap ödünç alabileceğiniz Türkiyenin bir numaralı kütüphanesi...
+    {{$setting->description}}
+
+@endsection
+@section('keywords')
+
+    {{$setting->keywords}}
 
 @endsection
 

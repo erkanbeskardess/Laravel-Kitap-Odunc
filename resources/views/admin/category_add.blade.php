@@ -50,7 +50,17 @@
 				<span class="contact100-form-title">
 
 				</span>
+                                    <label>Parent Kategorisi</label>
 
+                                    <div class="wrap-input100 validate-input" >
+                                        <select name="parent_id">
+                                            <option value="0" selected="selected">Ana Kategori</option>
+                                            @foreach($datalist as $rs)
+                                                    <option value="{{$rs->id}}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                            @endforeach
+                                        </select>
+
+                                    </div>
 
 
                                     <div class="wrap-input100 validate-input" >

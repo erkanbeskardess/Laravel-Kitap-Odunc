@@ -30,7 +30,7 @@ class BooksController extends Controller
      */
     public function create()
     {
-        $datalist = DB::table('categories')->get();
+        $datalist = Category::with('children')->get();
 
         return view('admin.books_add',['datalist' => $datalist]);
     }
@@ -81,7 +81,7 @@ class BooksController extends Controller
     public function edit(Books $books,$id)
     {
         $data = Books::find($id);
-        $datalist = Category::all();
+        $datalist = Category::with('children')->get();
 
         return view('admin.books_edit', ['data' => $data,'datalist' => $datalist]);
     }
