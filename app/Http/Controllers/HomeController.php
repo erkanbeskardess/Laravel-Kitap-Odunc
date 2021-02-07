@@ -15,7 +15,7 @@ class HomeController extends Controller
     }
 
     public function index(){
-        $setting=Setting::all();
+        $setting=Setting::first();
         return view('home.index',['setting'=>$setting]);
     }
     public function login(){

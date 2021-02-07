@@ -17,10 +17,12 @@ class BooksController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
     public function index()
     {
-        $datalist = Books::all();
-        return view('admin.books',['datalist' => $datalist]);
+        $data = Books::find(1);
+        $datalist = Category::with('children')->get();
+        return view('admin.books',['datalist' => $datalist,'data'=> $data]);
     }
 
     /**

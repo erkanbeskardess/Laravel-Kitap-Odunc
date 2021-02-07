@@ -24,8 +24,8 @@
                         <div class="login-sr">
                             <div class="login-signup">
                                 <ul>
-                                    <li><a href="users_login.blade.php">Giriş</a></li>
-                                    <li><a class="custom-b" href="#">Kayıt ol</a></li>
+                                    <li><a class="h-i"  href="#">{{Auth::user()->name}}</a></li>
+                                    <li><a class="custom-b" href="{{route('admin_logout')}}">Çıkış</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -33,7 +33,7 @@
                             <div class="help-box">
                                 <ul>
                                     <li> <a data-toggle="modal" data-target="#myModal" href="#"> <img src="{{asset('assets')}}/images/flag.png" alt="" /> </a> </li>
-                                    <li> <a href="#"><img class="h-i" /> Yardım </a> </li>
+                                    <li> <a href="{{route('myprofile')}}"><img class="h-i" /> Hesabım </a> </li>
                                 </ul>
                             </div>
                         </div>

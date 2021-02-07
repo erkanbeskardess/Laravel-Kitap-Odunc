@@ -53,7 +53,7 @@
                                     <label>Parent Kategorisi</label>
 
                                     <div class="wrap-input100 validate-input" >
-                                        <select name="parent_id">
+                                        <select value="0" name="parent_id">
                                             <option value="0" selected="selected">Ana Kategori</option>
                                             @foreach($datalist as $rs)
                                                     <option value="{{$rs->id}}">{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>

@@ -9,7 +9,7 @@ class Category extends Model
 {
     use HasFactory;
     protected $appends =[
-        'parents',
+        'parent',
     ];
 
     public function books()

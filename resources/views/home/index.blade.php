@@ -1,17 +1,6 @@
 @extends('layouts.main')
-@section('title')
-    {{$setting->title}}
-@endsection
-@section('description')
+@section('title','sa')
 
-    {{$setting->description}}
-
-@endsection
-@section('keywords')
-
-    {{$setting->keywords}}
-
-@endsection
 
 
 @section('content')
