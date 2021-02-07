@@ -46,8 +46,8 @@
 <div class="col-md-10 hidden-xs">
     <div class="furniture-right">
         <h3>Bize Dair</h3>
-        <div class="right-list-f" style="font-family: 'Comic Sans MS';font-size:18px;  ">
-                    {!!$setting->aboutus!!}
+        <div class="right-list-f">
+            {!!$setting->references!!}
         </div>
     </div>
     <br>
@@ -66,3 +66,4 @@
 
 </body>
 </html>
+

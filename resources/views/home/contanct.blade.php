@@ -43,13 +43,22 @@
     </div>
 </div>
 
-<div class="col-md-10 hidden-xs">
+<div class="col-md-6 hidden-xs">
     <div class="furniture-right">
         <h3>Bize Dair</h3>
-        <div class="right-list-f" style="font-family: 'Comic Sans MS';font-size:18px;  ">
-                    {!!$setting->aboutus!!}
+        <div class="right-list-f">
+            {!!$setting->contanct!!}
         </div>
     </div>
+    <div class="col-md-12 hidden-xs">
+        <div class="furniture-right">
+            <h3>Bize Ulaşın</h3>
+            <div class="right-list-f">
+               Yakında hizmetinizde...
+            </div>
+        </div>
+
+
     <br>
     <br>
     <br>

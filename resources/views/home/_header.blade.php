@@ -24,7 +24,8 @@
                         <div class="login-sr">
                             <div class="login-signup">
                                 <ul>
-                                    <li><a class="h-i"  href="#">{{Auth::user()->name}}</a></li>
+                                    <li><a class="h-i"  href="{{route('aboutus')}}">Bize Dair..</a></li>
+                                    <li><a class="h-i"  href="{{route('myprofile')}}">{{Auth::user()->name}}</a></li>
                                     <li><a class="custom-b" href="{{route('admin_logout')}}">Çıkış</a></li>
                                 </ul>
                             </div>
@@ -40,7 +41,7 @@
                         <div class="nav-b hidden-xs">
                             <div class="nav-box">
                                 <ul>
-                                    <li><a href="howitworks.html">Nasıl Kitap Ödünç Alabilirim ?</a></li>
+                                    <li><a href="{{route('nasıl')}}">Nasıl Kitap Ödünç Alabilirim ?</a></li>
 
                                 </ul>
                             </div>

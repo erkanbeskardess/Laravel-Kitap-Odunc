@@ -66,6 +66,22 @@ class HomeController extends Controller
     }
     public function aboutus()
     {
-        return view('home.about');
+        $setting=Setting::first();
+        return view('home.about',['setting'=>$setting]);
+    }
+    public function references()
+    {
+        $setting=Setting::first();
+        return view('home.references',['setting'=>$setting]);
+    }
+    public function contanct()
+    {
+        $setting=Setting::first();
+        return view('home.contanct',['setting'=>$setting]);
+    }
+
+    public function how()
+    {
+        return view('home.how');
     }
 }

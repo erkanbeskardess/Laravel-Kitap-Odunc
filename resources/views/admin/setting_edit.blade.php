@@ -146,7 +146,11 @@
 
                                     <label>Etkileşim</label>
                                     <div class="wrap-input100 validate-input" >
-                                        <input class="input100"  type="number" name="contanct" value="{{$data->contanct}}" placeholder="{{$data->contanct}}">
+                                        <textarea class="form-control" type="text" id="contanct" name="contanct">{{$data->contanct}}</textarea>
+                                        <script src="//cdn.ckeditor.com/4.14.0/standard/ckeditor.js"></script>
+                                        <script>
+                                            CKEDITOR.replace( 'contanct' );
+                                        </script>
                                     </div>
                                     <label> Statü </label>    ={{$data->status}}<br>
 
