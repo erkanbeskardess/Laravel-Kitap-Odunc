@@ -20,9 +20,9 @@ class BooksController extends Controller
 
     public function index()
     {
-        $data = Books::find(1);
+        $data = Books::all();
         $datalist = Category::with('children')->get();
-        return view('admin.books',['datalist' => $datalist,'data'=> $data]);
+        return view('admin.books',['data'=> $data,'datalist' => $datalist]);
     }
 
     /**

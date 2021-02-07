@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Message;
 use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -78,6 +79,19 @@ class HomeController extends Controller
     {
         $setting=Setting::first();
         return view('home.contanct',['setting'=>$setting]);
+    }
+    public function sendmessage(Request $request)
+    {
+        $data= new Message();
+        $data->name=$request->input('name');
+        $data->email=$request->input('email');
+        $data->phone=$request->input('phone');
+        $data->subject=$request->input('subject',);
+        $data->note=$request->input('note');
+        $data->message=$request->input('message');
+        $data->save();
+
+        return redirect()->route('contanct')->with('success',"Mesajınız İletilmiştir, İlginiz için teşekkür ederiz.");
     }
 
     public function how()

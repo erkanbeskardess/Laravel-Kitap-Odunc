@@ -28,6 +28,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contanct', [HomeController::class, 'contanct'])->name('contanct');
+Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::get('/how', [HomeController::class, 'how'])->name('nasıl');
 
 
@@ -60,6 +61,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\BooksController::class, 'update'])->name('admin_books_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\BooksController::class, 'destroy'])->name('admin_books_delete');
         Route::get('show', [\App\Http\Controllers\Admin\BooksController::class, 'show'])->name('admin_books_show');
+
+
+
+
+    });
+    Route::prefix('message')->middleware('auth')->group(function (){
+
+        Route::get('/', [\App\Http\Controllers\Admin\MessageController::class, 'index'])->name('admin_message');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'edit'])->name('admin_messages_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
 
 
 

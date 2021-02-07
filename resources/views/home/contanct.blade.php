@@ -23,6 +23,10 @@
 
     <script type="text/javascript" src="{{asset('assets')}}/js/jquery.js"></script>
     <script type="text/javascript" src="{{asset('assets')}}/js/function.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/form.css">
+
 </head>
 <body>
 @include('home._header')
@@ -54,7 +58,34 @@
         <div class="furniture-right">
             <h3>Bize Ulaşın</h3>
             <div class="right-list-f">
-               Yakında hizmetinizde...
+
+                <div class="main-block">
+                    @include('home.message')
+                    <div class="left-part">
+                        <i class="fas fa-envelope"></i>
+                        <i class="fas fa-at"></i>
+                        <i class="fas fa-mail-bulk"></i>
+                    </div>
+
+                    <form action="{{route('sendmessage')}}" method="post">
+                        @csrf
+                        <h1>Bize ulaşın...</h1>
+
+                        <div class="info">
+                            <input class="fname" type="text" name="name" placeholder="Adınız">
+                            <input type="text" name="email" placeholder="Email">
+                            <input type="text" name="phone" placeholder="Telefon Numarası">
+                            <input type="text" name="subject" placeholder="Konu">
+
+                        </div>
+                        <p>Mesajınız</p>
+                        <div>
+                            <textarea name="message" rows="4"></textarea>
+                        </div>
+                        <button type="submit" href="/">Gönder</button>
+                    </form>
+
+                </div>
             </div>
         </div>
 
