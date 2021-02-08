@@ -12,7 +12,7 @@
     <!--animate css-->
     <link rel="stylesheet" href="{{asset('assets')}}/css/animate-wow.css">
     <script src="{{asset('assets')}}/slider/js/jssor.slider-28.1.0.min.js" type="text/javascript"></script>
-
+    <link rel="stylesheet" href="{{asset('assets')}}/css/responsive.css">
     <!--main css-->
     <link rel="stylesheet" href="{{asset('assets')}}/css/style.css">
     <link rel="stylesheet" href="{{asset('assets')}}/css/bootstrap-select.min.css">
@@ -27,6 +27,7 @@
 <body>
 @include('home._header')
 @include('home._book')
+@include('home._slider')
 @include('home._container')
 @section('content')
     @show

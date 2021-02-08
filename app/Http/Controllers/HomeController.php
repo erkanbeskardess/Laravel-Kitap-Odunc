@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\Admin\BooksController;
 use App\Models\Category;
+use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
+use  App\Models\Books;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -14,10 +17,37 @@ class HomeController extends Controller
     {
         return Category::where('parent_id','=', 0)->with('children')->get();
     }
+    public function getbooks(Request $request)
+    {
+        $data= Books::where('title',$request->input('search'))->first();
+        return redirect()->route('book',['id'=>$data->id,'price'=>$data->price]);
+    }
 
     public function index(){
-        $setting=Setting::first();
-        return view('home.index',['setting'=>$setting]);
+       # $setting=Setting::first();
+        $slider=Books::select('id','title','description')->first(4)->get();
+        $trend=Books::select('id','title','price','description')->first(2)->get();
+
+
+        $datalist=[
+
+          'slider'=>$slider,
+          'trend'=>$trend,
+
+         ];
+        return view('home.index',$datalist);
+    }
+    public function book($id)
+    {
+        $data=Books::find($id);
+        $datalist = Image::where('books_id',$id)->get();
+        return view('home.book_detail',['datalist'=>$datalist,'data'=>$data]);
+    }
+    public function categorybook($id)
+    {
+        $datalist=Books::where('categories_id',$id)->get();
+        $data=Category::find($id);
+        return view('home.category_book',['data'=>$data,'datalist'=>$datalist]);
     }
     public function login(){
         return view('admin.login');

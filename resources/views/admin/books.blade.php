@@ -62,7 +62,7 @@
                                 @foreach ($datalist as $rs )
                                 <tr>
                                     <td>{{ $rs->id }}</td>
-
+                         <td>Yapılıyor</td>
                                     <td>{{ $rs->title }}</td>
 
                                     <td>{{ $rs->name }}</td>

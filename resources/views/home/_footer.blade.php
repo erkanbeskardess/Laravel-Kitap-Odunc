@@ -104,12 +104,12 @@
     </div>
 </footer>
 <!--main js-->
-<script src="js/jquery-1.12.4.min.js"></script>
+<script src="{{asset('assets')}}/js/jquery-1.12.4.min.js"></script>
 <!--bootstrap js-->
-<script src="js/bootstrap.min.js"></script>
-<script src="js/bootstrap-select.min.js"></script>
-<script src="js/slick.min.js"></script>
-<script src="js/wow.min.js"></script>
-<script src="jssor.slider-28.1.0.min.js"></script>
+<script src="{{asset('assets')}}/js/bootstrap.min.js"></script>
+<script src="{{asset('assets')}}/js/bootstrap-select.min.js"></script>
+<script src="{{asset('assets')}}/js/slick.min.js"></script>
+<script src="{{asset('assets')}}/js/wow.min.js"></script>
+<script src="{{asset('assets')}}/jssor.slider-28.1.0.min.js"></script>
 <!--custom js-->
-<script src="js/custom.js"></script>
+<script src="{{asset('assets')}}/js/custom.js"></script>

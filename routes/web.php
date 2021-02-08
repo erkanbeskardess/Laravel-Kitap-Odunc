@@ -17,20 +17,22 @@ use Illuminate\Support\Facades\Route;
 Route::get('/home2', function () {
     return view('welcome');
 });
-Route::redirect('/anasayfa','/home')->name('anasayfa');
 
-Route::get('/', function (){
+
+
+Route::get('/',function () {
     return view('home.index');
 });
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
-
+Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contanct', [HomeController::class, 'contanct'])->name('contanct');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::get('/book/{id}', [HomeController::class, 'book'])->name('book');
+Route::get('/categorybook/{id}', [HomeController::class, 'categorybook'])->name('categorybook');
 Route::get('/how', [HomeController::class, 'how'])->name('nasıl');
-
+Route::post('/getbooks', [HomeController::class, 'getbooks'])->name('getbooks');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');;
 Route::get('/admin/login', [HomeController::class, 'login'])->name('admin');

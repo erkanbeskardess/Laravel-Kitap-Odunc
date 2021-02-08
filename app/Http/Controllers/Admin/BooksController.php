@@ -20,8 +20,8 @@ class BooksController extends Controller
 
     public function index()
     {
-        $data = Books::all();
-        $datalist = Category::with('children')->get();
+        $datalist = Books::all();
+        $data = Category::with('children')->get();
         return view('admin.books',['data'=> $data,'datalist' => $datalist]);
     }
 
