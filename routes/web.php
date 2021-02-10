@@ -111,6 +111,17 @@ Route::prefix('myaccount')->middleware('auth')->namespace('myaccount')->group(fu
 
 
 });
+Route::prefix('basket')->middleware('auth')->group(function (){
+
+    Route::get('/', [\App\Http\Controllers\BasketController::class, 'index'])->name('user_basket');
+    Route::post('/store/{id}', [\App\Http\Controllers\BasketController::class, 'store'])->name('user_basket_add');
+    Route::post('update/{id}', [\App\Http\Controllers\BasketController::class, 'update'])->name('user_basket_update');
+    Route::get('delete/{id}', [\App\Http\Controllers\BasketController::class, 'destroy'])->name('user_basket_delete');
+
+
+
+
+});
 
 
 

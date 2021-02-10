@@ -30,6 +30,7 @@
     <div class="terms-title">
         <div class="container">
             <div class="row">
+                <center>@include('home.message')</center>
                 <ol class="breadcrumb">
                     <li><a href="{{route('home')}}">AnaSayfa </a></li>
                     <li><a href="{{route('home')}}"><td>{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($data,$data->title) }} </a></li>
@@ -116,6 +117,14 @@
                                     <div class="col-md-8">
                                         <p>{{$data->page}}</p>
                                     </div>
+                                </li>
+                                <li class="clearfix">
+                                   <form action="{{route('user_basket_add',['id'=>$data->id])}}" method="post">
+                                       @csrf
+                                    <div class="col-md-12">
+                                        <input type="submit" style="width:250px;height: 50px;float: right;background-color: #5cb85c;font-size: 15px; " value="Kitap Sepetime Ekle"/>
+                                    </div>
+                                    </form>
                                 </li>
 
                             </ul>

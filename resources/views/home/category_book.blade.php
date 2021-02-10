@@ -26,6 +26,7 @@
 </head>
 <body>
 @include('home._header')
+
 <div class="row clearfix">
     @foreach($datalist as $rs)
     <div class="col-lg-3 col-sm-6 col-md-3">

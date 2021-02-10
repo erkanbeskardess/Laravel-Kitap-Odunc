@@ -11,7 +11,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <a href="index.html" class="navbar-brand"><img src="{{asset('assets')}}/images/logo.png" alt="" /></a>
+                        <a href="{{route('home')}}" class="navbar-brand"><img src="{{asset('assets')}}/images/logo.png" alt="" /></a>
                     </div>
                     <form class="navbar-form navbar-left web-sh">
                         <div class="form">
