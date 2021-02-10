@@ -29,6 +29,8 @@ Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contanct', [HomeController::class, 'contanct'])->name('contanct');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
+Route::post('/givebook', [HomeController::class, 'givebook'])->name('givebook');
+Route::get('/mymessage', [HomeController::class, 'mymessage'])->name('mymessage');
 Route::get('/book/{id}', [HomeController::class, 'book'])->name('book');
 Route::get('/categorybook/{id}', [HomeController::class, 'categorybook'])->name('categorybook');
 Route::get('/how', [HomeController::class, 'how'])->name('nasıl');
@@ -75,6 +77,18 @@ Route::middleware('auth')->prefix('admin')->group(function (){
         Route::post('update/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'update'])->name('admin_message_update');
         Route::get('delete/{id}', [\App\Http\Controllers\Admin\MessageController::class, 'destroy'])->name('admin_message_delete');
         Route::get('show', [\App\Http\Controllers\Admin\MessageController::class, 'show'])->name('admin_message_show');
+
+
+
+
+    });
+    Route::prefix('barrow')->middleware('auth')->group(function (){
+
+        Route::get('/', [\App\Http\Controllers\Admin\BorrowController::class, 'index'])->name('admin_borrow');
+        Route::get('edit/{id}', [\App\Http\Controllers\Admin\BorrowController::class, 'edit'])->name('admin_borrow_edit');
+        Route::post('update/{id}', [\App\Http\Controllers\Admin\BorrowController::class, 'update'])->name('admin_borrow_update');
+        Route::get('delete/{id}', [\App\Http\Controllers\Admin\BorrowController::class, 'destroy'])->name('admin_borrow_delete');
+        Route::get('show', [\App\Http\Controllers\Admin\BorrowController::class, 'show'])->name('admin_borrow_show');
 
 
 

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\BooksController;
+use App\Models\borrow;
 use App\Models\Category;
 use App\Models\Image;
 use App\Models\Message;
@@ -10,6 +11,7 @@ use App\Models\Setting;
 use  App\Models\Books;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -110,6 +112,12 @@ class HomeController extends Controller
         $setting=Setting::first();
         return view('home.contanct',['setting'=>$setting]);
     }
+    public function mymessage()
+        {
+          $data=borrow::all();
+          $check = DB::table('borrows')->count();
+             return view('home.mymessage',['data'=>$data, 'check'=>$check]);
+        }
     public function sendmessage(Request $request)
     {
         $data= new Message();
@@ -122,6 +130,21 @@ class HomeController extends Controller
         $data->save();
 
         return redirect()->route('contanct')->with('success',"Mesajınız İletilmiştir, İlginiz için teşekkür ederiz.");
+    }
+    public function givebook(Request $request)
+    {
+        $data= new borrow();
+        $data->book_date=$request->input('book_date');
+        $data->user_id=$request->input('user_id');
+        $data->books_id=$request->input('books_id');
+        $data->ip=$request->input('ip');
+        $data->status=$request->input('status');
+        $data->return_date=$request->input('return_date');
+        $data->days=$request->input('days');
+
+        $data->save();
+
+        return redirect()->route('user_basket')->with('success',"Ödünç alma Talebiniz İletilmiştir, Son durumu Mesajlar kısmından takip edebilirsiniz.");
     }
 
     public function how()

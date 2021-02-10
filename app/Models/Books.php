@@ -18,6 +18,11 @@ class Books extends Model
 
         return $this->hasMany(Basket::class);
     }
+    public function borrow(){
+
+        return $this->hasMany(borrow::class);
+    }
+
 
 
 }

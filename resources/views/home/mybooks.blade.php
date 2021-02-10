@@ -23,6 +23,8 @@
 
     <script type="text/javascript" src="{{asset('assets')}}/js/jquery.js"></script>
     <script type="text/javascript" src="{{asset('assets')}}/js/function.js"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('assets')}}/css/form.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
 </head>
 <body>
 @include('home._header')
@@ -45,24 +47,37 @@
 
                 </div>
             @endforeach
-            <form>
+
                 <div class="col-lg-3 col-sm-6 col-md-3">
 
                         <div class="box-img">
 
-                            <div>
-                                <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>
-                                <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>
-                                <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>
+                            <div class="main-block">
+                                @include('home.message')
+                                <form action="{{route('givebook')}}" method="post">
+                                    @csrf
+                                    <h1>Ödünç Alma Formu</h1>
+
+                                    <div class="info">
+                                        <input class="fname" type="text" name="name" value="{{Auth::user()->name}}">
+                                        <input class="fname" type="number" name="user_id" value="{{Auth::user()->id}}">
+
+                                        <input type="date" name="book_date" placeholder="Başlangıç Tarihi">
+                                        <input type="date" name="return_date" placeholder="Dönüş Tarihi">
+                                        <input type="number" name="days" placeholder="Kaç gün??">
+                                        <input type="radio" name="status" value="Ödünç alma">
+                                    </div>
+
+                                    <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>
+                                </form>
 
 
-                                <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>
                              </div>
                         </div>
 
 
                 </div>
-                </form>
+
 
         </div>
     </div>

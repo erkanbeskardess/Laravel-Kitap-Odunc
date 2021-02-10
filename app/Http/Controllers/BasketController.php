@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Basket;
 use App\Models\Books;
+use App\Models\Setting;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -17,7 +18,9 @@ class BasketController extends Controller
      */
     public function index()
     {
-        $datalist = Basket::where('user_id',Auth::id())->get();
+
+
+        $datalist = Basket::all();
         return view('home.mybooks',['datalist' => $datalist]);
     }
 
