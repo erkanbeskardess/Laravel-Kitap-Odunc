@@ -25,7 +25,7 @@
                     <label for="check"><span class="icon"></span> Şifremi Hatırla</label>
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Giriş">
+                    <button class="button" type="submit">Giriş</button>
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">
@@ -50,7 +50,7 @@
                     <input id="pass" type="text" class="input">
                 </div>
                 <div class="group">
-                    <input type="submit" class="button" value="Kayıt Ol">
+
                 </div>
                 <div class="hr"></div>
                 <div class="foot-lnk">

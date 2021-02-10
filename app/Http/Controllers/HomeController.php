@@ -9,6 +9,7 @@ use App\Models\Image;
 use App\Models\Message;
 use App\Models\Setting;
 use  App\Models\Books;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -52,7 +53,8 @@ class HomeController extends Controller
         return view('home.category_book',['data'=>$data,'datalist'=>$datalist]);
     }
     public function login(){
-        return view('admin.login');
+
+        return view('home.login');
     }
     public function logincheck(Request $request){
 
@@ -62,16 +64,18 @@ class HomeController extends Controller
             $credentials =$request->only('email','password');
             if(Auth::attempt($credentials)){
                 $request->session()->regenerate();
-                return redirect()->intended('admin');
+                return redirect()->intended('home');
 
             }
+            else{
             return back()->withErrors([
-                'email'=>'email kayıtlı gardaş',
+                'email'=>'Giriş Başarısız..',
             ]);
+        }
         }
         else
         {
-            return view('admin.login');
+            return view('home.login');
         }
 }
 
@@ -83,20 +87,16 @@ class HomeController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/login');
+        return redirect('login');
     }
 
 
 
-    public function test($id,$name)
-    {
-        $data['id']=$id;
-        $data['name']=$name;
-        return view('home.test',$data);
 
-        echo "Id Number :", $id;
-        echo"name:", $name;
-    }
+
+
+
+
     public function aboutus()
     {
         $setting=Setting::first();

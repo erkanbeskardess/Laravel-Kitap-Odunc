@@ -10,7 +10,6 @@
                 <li><a href="{{route('mymessage')}}"><img width="32"  alt="" /> Mesajlarım</a></li>
                 <li><a href="{{route('admin_logout')}}"><img width="32"  alt="" /> Çıkış</a></li>
 
-
             </ul>
         </div>
     </div>

@@ -47,11 +47,11 @@
                         <span class="hide-menu">Mesajlar</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="fontawesome.html"
+                <li class="sidebar-item pt-2">
+                    <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('admin_users')}}"
                        aria-expanded="false">
-                        <i class="fa fa-font" aria-hidden="true"></i>
-                        <span class="hide-menu">Icon</span>
+                        <i class="far fa-clock" aria-hidden="true"></i>
+                        <span class="hide-menu">Kullanıcı Yönetimi</span>
                     </a>
                 </li>
                 <li class="sidebar-item">

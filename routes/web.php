@@ -24,7 +24,7 @@ Route::get('/',function () {
     return view('home.index');
 });
 
-Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->middleware('auth')->name('home');
 Route::get('/aboutus', [HomeController::class, 'aboutus'])->name('aboutus');
 Route::get('/references', [HomeController::class, 'references'])->name('references');
 Route::get('/contanct', [HomeController::class, 'contanct'])->name('contanct');
@@ -37,16 +37,17 @@ Route::get('/how', [HomeController::class, 'how'])->name('nasıl');
 Route::post('/getbooks', [HomeController::class, 'getbooks'])->name('getbooks');
 
 Route::get('/test/{id}/{name}', [HomeController::class, 'test'])->whereNumber('id')->whereAlpha('name')->name('test');;
-Route::get('/admin/login', [HomeController::class, 'login'])->name('admin');
+
 Route::post('/admin/logincheck', [HomeController::class, 'logincheck'])->name('admin_logincheck');
 Route::get('/admin/logout', [HomeController::class, 'logout'])->name('admin_logout');
 Route::get('/admin',[\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('adminhome')->middleware('auth');;
 
 
 Route::middleware('auth')->prefix('admin')->group(function (){
+    Route::middleware('admin')->group(function ()    {
 
     Route::get('/', [\App\Http\Controllers\Admin\HomeController::class, 'index'])->name('admin_home');
-
+    Route::get('/login', [HomeController::class, 'login'])->name('admin');
     Route::get('category', [\App\Http\Controllers\Admin\CategoryController::class, 'index'])->name('admin_category');
     Route::get('category/add', [\App\Http\Controllers\Admin\CategoryController::class, 'add'])->name('admin_category_add');
     Route::get('category/edit/{id}', [\App\Http\Controllers\Admin\CategoryController::class, 'edit'])->name('admin_category_edit');
@@ -94,6 +95,23 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 
     });
+    Route::prefix('user')->middleware('auth')->group(function (){
+
+            Route::get('/', [\App\Http\Controllers\Admin\UserController::class, 'index'])->name('admin_users');
+            Route::post('create', [\App\Http\Controllers\Admin\UserController::class, 'create'])->name('admin_user_add');
+            Route::post('store', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_store');
+            Route::get('edit/{id}', [\App\Http\Controllers\Admin\UserController::class, 'edit'])->name('admin_user_edit');
+            Route::post('update/{id}', [\App\Http\Controllers\Admin\UserController::class, 'update'])->name('admin_user_update');
+            Route::get('delete/{id}', [\App\Http\Controllers\Admin\UserController::class, 'destroy'])->name('admin_user_delete');
+            Route::get('show', [\App\Http\Controllers\Admin\UserController::class, 'show'])->name('admin_user_show');
+        Route::get('user_role/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles'])->name('admin_user_roles');
+        Route::post('user_role_store/{id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles_store'])->name('admin_user_roles_add');
+        Route::get('user_role_delete/{user_id}/{role_id}', [\App\Http\Controllers\Admin\UserController::class, 'user_roles_delete'])->name('admin_user_roles_delete');
+
+
+
+
+        });
     Route::prefix('image')->group(function (){
 
         Route::get('create/{books_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
@@ -115,7 +133,7 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
     });
 
-
+    });
 
 
 });
