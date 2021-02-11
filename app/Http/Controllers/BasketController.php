@@ -18,9 +18,9 @@ class BasketController extends Controller
      */
     public function index()
     {
+        $user=\Illuminate\Support\Facades\Auth::user()->id;
 
-
-        $datalist = Basket::all();
+        $datalist=Basket::where('user_id',$user)->get();
         return view('home.mybooks',['datalist' => $datalist]);
     }
 

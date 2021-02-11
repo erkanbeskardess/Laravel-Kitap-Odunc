@@ -59,7 +59,7 @@
                                     <tr>
 
                                         <td>{{ $rs->user_id }}</td>
-                                        <td>{{ $rs->book_id }}</td>
+                                        <td>{{ $rs->books_id }}</td>
                                         <td>{{ $rs->book_date }}</td>
                                         <td>{{  $rs->return_date }} </td>
                                         <td>{!!  $rs->note !!} </td>

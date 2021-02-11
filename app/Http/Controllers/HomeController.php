@@ -115,10 +115,10 @@ class HomeController extends Controller
     }
     public function mymessage()
         {
-          $data=borrow::all();
-          $datalist=Basket::all();
+            $user=\Illuminate\Support\Facades\Auth::user()->id;
+          $data=borrow::where('user_id',$user)->get();
           $check = DB::table('borrows')->count();
-             return view('home.mymessage',['data'=>$data, 'check'=>$check,'datalist'=>$datalist]);
+             return view('home.mymessage',['data'=>$data, 'check'=>$check]);
         }
     public function sendmessage(Request $request)
     {
@@ -134,17 +134,31 @@ class HomeController extends Controller
         return redirect()->route('contanct')->with('success',"Mesajınız İletilmiştir, İlginiz için teşekkür ederiz.");
     }
     public function givebook(Request $request)
+
     {
+        $books='';
+        $user=\Illuminate\Support\Facades\Auth::user()->id;
         $data= new borrow();
+        $data->user_id=$user;
+        $datalist=Basket::where('user_id',$user)->get();
+        foreach ($datalist as $rs){
+
+          $books.=$rs->books_id.',';
+
+        }
+
+        $data->books_id=$books;
+
+
         $data->book_date=$request->input('book_date');
-        $data->user_id=$request->input('user_id');
-        $data->books_id=$request->input('books_id');
         $data->ip=$request->input('ip');
         $data->status=$request->input('status');
         $data->return_date=$request->input('return_date');
         $data->days=$request->input('days');
-        $data->save();
 
+        $data->save();
+        $value=Basket::where('user_id',$user);
+        $value->delete();
         return redirect()->route('user_basket')->with('success',"Ödünç alma Talebiniz İletilmiştir, Son durumu Mesajlarım kısmından takip edebilirsiniz.");
     }
 

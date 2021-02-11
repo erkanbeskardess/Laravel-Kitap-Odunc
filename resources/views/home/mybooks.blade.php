@@ -48,7 +48,7 @@
                 </div>
             @endforeach
 
-                <div class="col-lg-3 col-sm-6 col-md-3">
+                <div class="col-lg-12 col-sm-12 col-md-12">
 
                         <div class="box-img">
 
@@ -60,13 +60,7 @@
 
                                     <div class="info">
                                         <input class="fname" type="text" name="name" value="{{Auth::user()->name}}">
-                                        <input class="fname" type="number" name="user_id" value="{{Auth::user()->id}}">
-                                        <label>------Kitap İdleri------</label>
 
-                                        @foreach($datalist as $rs)
-                                        <input type="text" name="books_id" value="{{$rs->books_id}}">
-                                        @endforeach
-                                        <label>------------</label>
                                         <input type="date" name="book_date" placeholder="Başlangıç Tarihi">
                                         <input type="date" name="return_date" placeholder="Dönüş Tarihi">
                                         <input type="number" name="days" placeholder="Kaç gün??">

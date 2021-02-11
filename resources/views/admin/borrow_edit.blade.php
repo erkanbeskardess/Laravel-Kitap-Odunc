@@ -75,11 +75,11 @@
                                 </div>
                                 <label>Başlangıç tarihi:</label>
                                 <div class="wrap-input100 validate-input" >
-                                    <input class="input100" type="date" name="book_date" value="{{$data->book_date}} " placeholder="{{$data->book_date}}" >
+                                    <input class="input100" type="date" name="book_date" value="{{$data->book_date}} " >
                                 </div>
                                 <label>Bitiş tarihi:</label>
                                 <div class="wrap-input100 validate-input" >
-                                    <input class="input100" type="date" name="return_date" value="{{$data->return_date}} " placeholder="{{$data->return_date}}" >
+                                    <input class="input100" type="date" name="return_date" value="{{$data->return_date}} "  >
                                 </div>
                                 <label>Toplam Gün.:</label>
                                 <div class="wrap-input100 validate-input" >
