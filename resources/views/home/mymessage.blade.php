@@ -35,6 +35,7 @@
 <div class="col-md-10 hidden-xs">
     <div class="furniture-right">
         <h3>Mesajlarım</h3>
+
         <div class="right-list-f">
                 <div class="col-lg-12">
                     <div class="white-box">
@@ -46,9 +47,12 @@
                                     <th class="border-top-0">Kitap idleri</th>
                                     <th class="border-top-0">Ödünç alma Tarihi</th>
                                     <th class="border-top-0">Teslim Tarihi</th>
-                                    <th class="border-top-0">Notunuz</th>
+                                    <th class="border-top-0">Admin Notu</th>
                                     <th class="border-top-0">Toplam gün</th>
                                     <th class="border-top-0">Durum</th>
+                                    <th class="border-top-0">Kontrol</th>
+
+
 
                                 </tr>
                                 </thead>
@@ -65,6 +69,9 @@
                                         <td>{!!  $rs->note !!} </td>
                                         <td>{{  $rs->days }} </td>
                                         <td>{!!  $rs->status !!} </td>
+                                        <td class="txt-oflo" ><a  href= "{{route('borrow_edit',['id'=>$rs->id])}}" target="_blank">Güncelle</a></td>
+
+
 
                                     </tr>
                                 </tbody>

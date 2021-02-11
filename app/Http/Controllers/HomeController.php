@@ -30,7 +30,7 @@ class HomeController extends Controller
     public function index(){
        # $setting=Setting::first();
         $slider=Books::select('id','title','description')->first(4)->get();
-        $trend=Books::select('id','title','price','description')->first(2)->get();
+        $trend=Books::select('id','name','price','novelist','image','description')->limit(5)->inRandomorder()->get();
 
 
         $datalist=[
@@ -165,5 +165,31 @@ class HomeController extends Controller
     public function how()
     {
         return view('home.how');
+    }
+    public function borrow_edit($id)
+    {
+        $data =borrow::find($id);
+        $datali= borrow::all();
+        $datalist=User::all();
+        return view('home.borrow_edit',['data'=>$data,'datalist'=>$datalist,'datali'=>$datali]);
+    }
+    public function borrow_update(Request $request,$id)
+    {
+        $data =borrow::find($id);
+        $data->book_date=$request->input('book_date');
+        $data->return_date=$request->input('return_date');
+        $data->days=$request->input('days');
+        $data->id=$request->input('id');
+        $data->status="Kullanıcı Tarafından Güncellendi.";
+
+        $data->save();
+        return redirect()->route('mymessage')->with('success',"Ödünç alma talebi Güncellendi.");
+    }
+    public function borrow_delete($id)
+    {
+        $data = borrow::where('id', $id);
+        $data->delete();
+
+        return redirect()->route('mymessage')->with('success', "Ödünç alma talebi Güncellendi.");
     }
 }

@@ -31,6 +31,12 @@ Route::get('/contanct', [HomeController::class, 'contanct'])->name('contanct');
 Route::post('/sendmessage', [HomeController::class, 'sendmessage'])->name('sendmessage');
 Route::post('/givebook', [HomeController::class, 'givebook'])->name('givebook');
 Route::get('/mymessage', [HomeController::class, 'mymessage'])->name('mymessage');
+Route::get('borrow/edit/{id}', [\App\Http\Controllers\HomeController::class, 'borrow_edit'])->name('borrow_edit');
+Route::post('borrow/update/{id}', [\App\Http\Controllers\HomeController::class, 'borrow_update'])->name('borrow_update');
+Route::get('borrow/delete/{id}', [\App\Http\Controllers\HomeController::class, 'borrow_delete'])->name('borrow_delete');
+
+
+
 Route::get('/book/{id}', [HomeController::class, 'book'])->name('book');
 Route::get('/categorybook/{id}', [HomeController::class, 'categorybook'])->name('categorybook');
 Route::get('/how', [HomeController::class, 'how'])->name('nasıl');
@@ -111,7 +117,8 @@ Route::middleware('auth')->prefix('admin')->group(function (){
 
 
 
-        });
+
+    });
     Route::prefix('image')->group(function (){
 
         Route::get('create/{books_id}', [\App\Http\Controllers\Admin\ImageController::class, 'create'])->name('admin_image_add');
