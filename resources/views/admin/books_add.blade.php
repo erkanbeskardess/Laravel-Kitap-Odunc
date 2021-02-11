@@ -38,7 +38,7 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="white-box">
-                        <h3 class="box-title">Kategori Ekleme</h3>
+                        <h3 class="box-title">Ürün Ekleme</h3>
                     </div>
                     <div class="white-box">
                         <h3 class="box-title">FORM</h3>

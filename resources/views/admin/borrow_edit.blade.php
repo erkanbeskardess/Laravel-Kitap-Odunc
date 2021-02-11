@@ -63,7 +63,10 @@
                                 <div class="wrap-input100 validate-input" >
                                     <input class="input100" type="text" name="name" value="{{Auth::user()->name}} " placeholder="">
                                 </div>
-
+                                <label>Kitap idleri:</label>
+                                <div class="wrap-input100 validate-input" >
+                                    <input class="input100" type="number" name="books_id" value="{{$data->books_id}} " placeholder="{{$data->books_id}}" >
+                                </div>
 
 
                                 <label>Tel No.:</label>

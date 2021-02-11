@@ -29,7 +29,6 @@ class CategoryController extends Controller
     public function index()
     {
         $datalist = Category::with('children')->get();
-
         return view('admin.category', ['datalist' => $datalist]);
 
         //print_r($datalist);
@@ -55,6 +54,7 @@ class CategoryController extends Controller
     public function create(Request $request)
     {
         DB::table('categories')->insert([
+            'parent_id' => $request->input('parent_id'),
             'title' => $request->input('title'),
             'description' => $request->input('description'),
             'keywords' => $request->input('keywords'),
@@ -111,6 +111,7 @@ class CategoryController extends Controller
     public function update(Category $category,Request $request, int $id)
     {
         $data = Category::find($id);
+        $data->parent_id = $request->input('parent_id');
         $data->title  = $request->input('title');
         $data->description  = $request->input('description');
         $data->keywords = $request->input('keywords');

@@ -40,6 +40,7 @@
                                 <thead>
                                 <tr>
                                     <th class="border-top-0">Kullanıcı id</th>
+                                    <th class="border-top-0">Kitap idleri</th>
                                     <th class="border-top-0">Ödünç alma Tarihi</th>
                                     <th class="border-top-0">Teslim Tarihi</th>
                                     <th class="border-top-0">Notunuz</th>
@@ -55,6 +56,7 @@
                                 <tr>
 
                                     <td>{{ $rs->user_id }}</td>
+                                    <td>{{ $rs->books_id }}</td>
                                     <td>{{ $rs->book_date }}</td>
                                     <td>{{  $rs->return_date }} </td>
                                     <td>{!!  $rs->note !!} </td>

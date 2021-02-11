@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Admin\BooksController;
+use App\Models\Basket;
 use App\Models\borrow;
 use App\Models\Category;
 use App\Models\Image;
@@ -115,8 +116,9 @@ class HomeController extends Controller
     public function mymessage()
         {
           $data=borrow::all();
+          $datalist=Basket::all();
           $check = DB::table('borrows')->count();
-             return view('home.mymessage',['data'=>$data, 'check'=>$check]);
+             return view('home.mymessage',['data'=>$data, 'check'=>$check,'datalist'=>$datalist]);
         }
     public function sendmessage(Request $request)
     {
@@ -141,10 +143,9 @@ class HomeController extends Controller
         $data->status=$request->input('status');
         $data->return_date=$request->input('return_date');
         $data->days=$request->input('days');
-
         $data->save();
 
-        return redirect()->route('user_basket')->with('success',"Ödünç alma Talebiniz İletilmiştir, Son durumu Mesajlar kısmından takip edebilirsiniz.");
+        return redirect()->route('user_basket')->with('success',"Ödünç alma Talebiniz İletilmiştir, Son durumu Mesajlarım kısmından takip edebilirsiniz.");
     }
 
     public function how()

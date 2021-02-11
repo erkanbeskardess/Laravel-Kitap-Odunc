@@ -36,21 +36,50 @@
     <div class="furniture-right">
         <h3>Mesajlarım</h3>
         <div class="right-list-f">
-                <div class="col-lg-3 col-sm-6 col-md-3">
+                <div class="col-lg-12">
+                    <div class="white-box">
+                        <div class="table-responsive">
+                            <table class="table no-wrap">
+                                <thead>
+                                <tr>
+                                    <th class="border-top-0">Kullanıcı id</th>
+                                    <th class="border-top-0">Kitap idleri</th>
+                                    <th class="border-top-0">Ödünç alma Tarihi</th>
+                                    <th class="border-top-0">Teslim Tarihi</th>
+                                    <th class="border-top-0">Notunuz</th>
+                                    <th class="border-top-0">Toplam gün</th>
+                                    <th class="border-top-0">Durum</th>
 
-                        <div class="box-img">
-                            <img src="https://miro.medium.com/max/500/0*ZPOXKacyUC54e39E.png" alt="" />
-                              </div>
+                                </tr>
+                                </thead>
+
+
+                                <tbody>
+                                @foreach ($data as $rs )
+                                    <tr>
+
+                                        <td>{{ $rs->user_id }}</td>
+                                        <td>{{ $rs->book_id }}</td>
+                                        <td>{{ $rs->book_date }}</td>
+                                        <td>{{  $rs->return_date }} </td>
+                                        <td>{!!  $rs->note !!} </td>
+                                        <td>{{  $rs->days }} </td>
+                                        <td>{!!  $rs->status !!} </td>
+
+                                    </tr>
+                                </tbody>
+                                @endforeach
+                            </table>
+
+                        </div>
+                    </div>
+
 
                 </div>
-
-
-
-        </div>
     </div>
-    <br>
-    <br>
-    <br>
+    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
 </div>
 
 

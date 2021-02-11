@@ -61,11 +61,16 @@
                                     <div class="info">
                                         <input class="fname" type="text" name="name" value="{{Auth::user()->name}}">
                                         <input class="fname" type="number" name="user_id" value="{{Auth::user()->id}}">
+                                        <label>------Kitap İdleri------</label>
 
+                                        @foreach($datalist as $rs)
+                                        <input type="text" name="books_id" value="{{$rs->books_id}}">
+                                        @endforeach
+                                        <label>------------</label>
                                         <input type="date" name="book_date" placeholder="Başlangıç Tarihi">
                                         <input type="date" name="return_date" placeholder="Dönüş Tarihi">
                                         <input type="number" name="days" placeholder="Kaç gün??">
-                                        <input type="radio" name="status" value="Ödünç alma">
+                                        <input type="radio" name="status" value="Ödünç alma">Ödünç Alma
                                     </div>
 
                                     <input type="submit" style="width:250px;height:50px; margin-top:10px;background-color: #5cb85c;font-size: 15px; " value="Ödünç Almayı gerçekleştir..."/>

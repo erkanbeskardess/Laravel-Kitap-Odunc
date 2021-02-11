@@ -55,9 +55,9 @@
                                        Ana Kategoriler
 
                                         <select name="categories_id">
-                                            <option selected="selected">Ana Kategori</option>
+                                            <option>Ana Kategori</option>
                                             @foreach($datalist as $rs)
-                                                <option value="{{$rs->id}}"  @if ($rs->id == $data->parent_id) selected="selected" @endif >{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
+                                                <option value="{{$rs->id}}" selected="selected"  @if ($rs->id == $data->parent_id)  @endif >{{ \App\Http\Controllers\Admin\CategoryController::getParentsTree($rs,$rs->title) }}</option>
                                             @endforeach
                                         </select>
 

@@ -95,11 +95,11 @@
                                     <div class="wrap-contact100-form-btn">
                                         <div class="contact100-form-bgbtn"></div>
                                         <button  class="contact100-form-btn">
-                                        Güncelle
+                                     Ekle
                                         </button>
                                     </div>
                                 </div>
-
+                                <label style="color: red">Silmek istediğiniz rolün üstüne basınız.</label>
                             </form>
                         </div>
                     </div>
