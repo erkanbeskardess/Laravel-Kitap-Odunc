@@ -128,7 +128,7 @@
         <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:1600px;height:560px;overflow:hidden;">
             @foreach($slider as $rs)
             <div style="background-color:#d3890e;">
-                <img data-u="image" style="opacity:0.8;" data-src="{{Storage::url($rs->image)}}" />
+               <a href="{{route('book',['id'=>$rs->id])}}"> <img data-u="image" style="opacity:0.8;" data-src="{{Storage::url($rs->image)}}" /></a>
                 <div data-ts="flat" data-p="275" data-po="40% 50%" style="left:150px;top:40px;width:800px;height:300px;position:absolute;">
                     <div data-to="50% 50%" data-t="0" style="left:50px;top:520px;width:400px;height:100px;position:absolute;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">{{ $rs->novelist }}</div>
                     <div data-to="50% 50%" data-t="1" style="left:50px;top:540px;width:400px;height:100px;position:absolute;opacity:0.5;color:#f0a329;font-family:'Roboto Condensed',sans-serif;font-size:84px;font-weight:900;letter-spacing:0.5em;">{{ $rs->novelist }}</div>

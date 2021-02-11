@@ -45,6 +45,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+
                 <div class="prod-page-title">
                     <h2>{{$data->name}}</h2>
                     <p>By <span>{{$data->novelist}}</span></p>
